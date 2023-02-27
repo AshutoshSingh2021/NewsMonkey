@@ -1,8 +1,21 @@
 import React, { Component } from "react";
 import NewsItems from "./NewsItems";
 import Spinner from "./Spinner";
+import PropTypes from "prop-types";
 
 export class News extends Component {
+  static defaultProps = {
+    country: "in",
+    pageSize: 8,
+    category: "general",
+  };
+
+  static propTypes = {
+    country: PropTypes.string,
+    pageSize: PropTypes.number,
+    category: PropTypes.string,
+  };
+
   constructor() {
     super();
     this.state = {
@@ -13,7 +26,7 @@ export class News extends Component {
   }
 
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=51effeefab3042558456d0fb5f892731&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=51effeefab3042558456d0fb5f892731&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
 
     let data = await fetch(url);
@@ -34,7 +47,11 @@ export class News extends Component {
       )
     ) {
       let url = ` 
-      https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=51effeefab3042558456d0fb5f892731&page=${
+      https://newsapi.org/v2/top-headlines?country=${
+        this.props.country
+      }&category=${
+        this.props.category
+      }&apiKey=51effeefab3042558456d0fb5f892731&page=${
         this.state.page + 1
       }&pageSize=${this.props.pageSize}`;
 
@@ -53,7 +70,11 @@ export class News extends Component {
   };
 
   handlePrevClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=51effeefab3042558456d0fb5f892731&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=${
+      this.props.country
+    }&category=${
+      this.props.category
+    }&apiKey=51effeefab3042558456d0fb5f892731&page=${
       this.state.page - 1
     }&pageSize=${this.props.pageSize}`;
 
@@ -72,7 +93,9 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h1 className="text-center">NewsMonkey - Top Headlines</h1>
+        <h1 className="text-center" style={{ margin: "30px 0px" }}>
+          NewsMonkey - Top Headlines
+        </h1>
         {this.state.loading && <Spinner />}
         <div className="row">
           {!this.state.loading &&
