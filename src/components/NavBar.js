@@ -28,43 +28,43 @@ export default class NavBar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-Link " aria-current="page" to="/">
+                  <Link className="nav-Link " aria-current="page" to={"/"}>
                     Home
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/business">
+                  <Link className="nav-Link" to={"/business"}>
                     Business
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/entertainment">
+                  <Link className="nav-Link" to={"/entertainment"}>
                     Entertainment
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/general">
+                  <Link className="nav-Link" to={"/general"}>
                     General
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/health">
+                  <Link className="nav-Link" to={"/health"}>
                     Health
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/science">
+                  <Link className="nav-Link" to={"/science"}>
                     Science
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/sports">
+                  <Link className="nav-Link" to={"/sports"}>
                     Sports
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link" to="/technology">
+                  <Link className="nav-Link" to={"/technology"}>
                     Technology
                   </Link>
                 </li>
