@@ -1,77 +1,58 @@
 import React, { Component } from "react";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 
 export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+        <Navbar
+          className="navbar navbar-expand-lg navbar-dark bg-dark"
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <Container>
+            <Nav.Link className="navbar-brand" href="/">
               NewsMonkey
-            </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link className="nav-Link " aria-current="page" to={"/"}>
-                    Home
-                  </Link>
-                </li>
+            </Nav.Link>
 
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/business"}>
-                    Business
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/entertainment"}>
-                    Entertainment
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/general"}>
-                    General
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/health"}>
-                    Health
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/science"}>
-                    Science
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/sports"}>
-                    Sports
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-Link" to={"/technology"}>
-                    Technology
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+            <Nav className="me-auto">
+              <Nav.Link className="nav-Link " aria-current="page" href="/">
+                Home
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/business">
+                Business
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/entertainment">
+                Entertainment
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/general">
+                General
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/health">
+                Health
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/science">
+                Science
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/sports">
+                Sports
+              </Nav.Link>
+
+              <Nav.Link className="nav-Link" href="/technology">
+                Technology
+              </Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
       </div>
     );
   }
